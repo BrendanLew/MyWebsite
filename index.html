@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Brendan Lewis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #sidebar {
+            position: fixed;
+            top: 100px; /* Adjust to move the sidebar content down */
+            left: 0;
+            width: 200px;
+            height: calc(100% - 60px); /* Adjust height to account for home logo */
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #sidebar img {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        #sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        main {
+            margin-left: 220px; /* Adjust this value based on the sidebar width */
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .home-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 20px; /* Adjust size as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">My Projects</a></li>
+                <li><a href="skills.html">My Skills</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <a href="test.html">
+        <img src="C:\Users\lewisbre\Desktop\Personal\MyWebsite\home_image.jfif" alt="Home" class="home-logo">
+    </a>
+    
+    <div id="sidebar">
+        <img src="C:/Users/lewisbre/Desktop/Personal/Profile%20Photo.jpg" alt="Profile Image">
+        <p>Your Name</p>
+        <a href="contact.html">Contact Me</a>
+        <a href="https://github.com/yourprofile">GitHub</a>
+        <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>
+    </div>
+
+    <main>
+        <h2>About Me</h2>
+        <p>Welcome to my personal website. Here you can find information about my projects, skills, and how to contact me.</p>
+        <!-- Add more content here -->
+    </main>
+    
+    <footer>
+        <p>© 2024 Brendan Lewis. All rights reserved.</p>
+    </footer>
+</body>
+</html>
