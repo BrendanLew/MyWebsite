@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Your Name</title>
+    <title>Contact - Brendan Lewis</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,9 +21,11 @@
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
         }
         nav ul li {
-            display: inline;
             margin: 0 10px;
         }
         nav ul li a {
@@ -60,10 +62,10 @@
             background-color: #555;
         }
         footer {
-            background-color: #d3d3d3;
-            color: #333;
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            padding: 5px 0;
+            padding: 10px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
@@ -96,7 +98,7 @@
     
     <main>
         <h2>Get in Touch</h2>
-        <form id="contact-form" method="post" enctype="text/plain">
+        <form id="contact-form" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -111,7 +113,7 @@
     </main>
     
     <footer>
-        <p>© 2024 Your Name. All rights reserved.</p>
+        <p>© 2024 Brendan Lewis. All rights reserved.</p>
         <ul>
             <li><a href="#" id="email-link">Email Me</a></li>
             <li><a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a></li>

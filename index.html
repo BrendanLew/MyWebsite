@@ -34,10 +34,10 @@
         }
         #sidebar {
             position: fixed;
-            top: 100px; /* Adjust to move the sidebar content down */
+            top: 100px;
             left: 0;
             width: 200px;
-            height: calc(100% - 60px); /* Adjust height to account for home logo */
+            height: calc(100% - 60px);
             background-color: #333;
             color: #fff;
             padding: 20px;
@@ -55,7 +55,7 @@
             margin-bottom: 10px;
         }
         main {
-            margin-left: 220px; /* Adjust this value based on the sidebar width */
+            margin-left: 220px;
             padding: 20px;
         }
         footer {
@@ -71,7 +71,9 @@
             position: fixed;
             top: 20px;
             left: 20px;
-            width: 20px; /* Adjust size as needed */
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -90,22 +92,21 @@
         </nav>
     </header>
 
-    <a href="test.html">
-        <img src="C:\Users\lewisbre\Desktop\Personal\MyWebsite\home_image.jfif" alt="Home" class="home-logo">
+    <a href="index.html">
+        <img src="C:\Users\lewisbre\Desktop\Personal\MyWebsite\home_image.jfif"" alt="Home" class="home-logo">
     </a>
     
-    <div id="sidebar">
+    <aside id="sidebar">
         <img src="C:\Users\brend\OneDrive\Desktop\Profile_picture.JPEG" alt="Profile Image">
         <p>Brendan Lewis</p>
         <a href="contact.html">Contact Me</a>
         <a href="https://github.com/BrendanLew">GitHub</a>
         <a href="https://www.linkedin.com/in/brendan-lewis-8a7288296/">LinkedIn</a>
-    </div>
+    </aside>
 
     <main>
         <h2>About Me</h2>
         <p>Welcome to my personal website. Here you can find information about my projects, skills, and how to contact me.</p>
-        <!-- Add more content here -->
     </main>
     
     <footer>
