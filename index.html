@@ -42,11 +42,25 @@
             color: #fff;
             padding: 20px;
             box-sizing: border-box;
+            text-align: center; /* Center align text inside the sidebar */
         }
         #sidebar img {
             width: 100%;
             border-radius: 50%;
             margin-bottom: 20px;
+        }
+        #sidebar p {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        #links-label {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-bottom: 1px solid #fff; /* Line below the label */
+            padding-bottom: 5px;
         }
         #sidebar a {
             color: #fff;
@@ -67,18 +81,11 @@
             width: 100%;
             bottom: 0;
         }
-        .home-logo {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-        }
+        /* Added styles for download button */
         .download-button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #17de09;
+            background-color: #28a745;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -104,17 +111,17 @@
         </nav>
     </header>
 
-    <a href="index.html">
-        <img src="C:\Users\lewisbre\Desktop\Personal\MyWebsite\home_image.jfif"" alt="Home" class="home-logo">
-    </a>
+    <a href="index.html"></a>
     
     <aside id="sidebar">
+        <!-- Changed to relative path for image -->
         <img src="C:\Users\brend\OneDrive\Desktop\Profile_picture.JPEG" alt="Profile Image">
         <p>Brendan Lewis</p>
+        <div id="links-label">Links</div>
         <a href="contact.html">Contact Me</a>
         <a href="https://github.com/BrendanLew">GitHub</a>
         <a href="https://www.linkedin.com/in/brendan-lewis-8a7288296/">LinkedIn</a>
-        <a href="C:\Users\brend\OneDrive\Desktop\Work Experience\Resume - Brendan Lewis.pdf">Download My Resume</a>
+        <a href="images/resume.pdf" class="download-button" download>Download My Resume</a>
     </aside>
 
     <main>

@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Light grey background */
+            background-color: #f4f4f4;
             color: #333;
         }
         header {
@@ -42,11 +42,25 @@
             color: #fff;
             padding: 20px;
             box-sizing: border-box;
+            text-align: center; /* Center align text inside the sidebar */
         }
         #sidebar img {
             width: 100%;
             border-radius: 50%;
             margin-bottom: 20px;
+        }
+        #sidebar p {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        #links-label {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-bottom: 1px solid #fff; /* Line below the label */
+            padding-bottom: 5px;
         }
         #sidebar a {
             color: #fff;
@@ -66,6 +80,18 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .download-button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -87,10 +113,11 @@
     <aside id="sidebar">
         <img src="C:\Users\brend\OneDrive\Desktop\Profile_picture.JPEG" alt="Profile Image">
         <p>Brendan Lewis</p>
+        <div id="links-label">Links</div>
         <a href="contact.html">Contact Me</a>
         <a href="https://github.com/BrendanLew">GitHub</a>
         <a href="https://www.linkedin.com/in/brendan-lewis-8a7288296/">LinkedIn</a>
-        <a href="C:\Users\brend\OneDrive\Desktop\Work Experience\Resume - Brendan Lewis.pdf">Download My Resume</a>
+        <a href="images/resume.pdf" class="download-button" download>Download My Resume</a>
         <!-- Add more links if needed -->
     </aside>
 
