@@ -19,6 +19,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
   <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
 </nav>
+
 <!-- Top menu -->
 <div class="w3-top">
   <div class= "w3-xlarge" style="max-width:1200px;margin:auto">
@@ -56,6 +57,17 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
   <p> © 2025 Brendan Lewis - All Rights Reserved.</p>
 </footer>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 
 </body>
 </html>
