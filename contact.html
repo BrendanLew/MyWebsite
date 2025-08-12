@@ -1,15 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Brendan's Portfolio - Contact</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
-</style>
+  <meta charset="UTF-8">
+  <title>Contact | Brendan's Cybersecurity Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<p> UHHH... this page isn't done yet. COME BACK LATER</p>
+<body>
+  <button class="menu-btn" onclick="openSidebar()">☰</button>
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">✕</button>
+    <a href="index.html" onclick="closeSidebar()">Home</a>
+    <a href="blog.html" onclick="closeSidebar()">Blog</a>
+  </nav>
+  <div class="banner">
+    <span style="color:#fff;">Contact</span> Brendan
+    <span class="banner-terminal">$ mail brendan</span>
+  </div>
+  <main class="container">
+    <section class="bubble">
+      <h3>Send Me a Message</h3>
+      <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-btn">Send Message</button>
+      </form>
+    </section>
+    <section class="bubble">
+      <h3>Connect with Me</h3>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/brendan-lewis87" target="_blank">LinkedIn</a>
+        <a href="https://github.com/brendanlew" target="_blank">GitHub</a>
+        <a href="mailto:brendan@email.com">Email</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <a href="blog.html">Previous</a>
+    <a href="index.html">Home</a>
+    <div>© 2025 Brendan Lewis - All Rights Reserved.</div>
+  </footer>
+  <script>
+    function openSidebar() {
+      document.getElementById('sidebar').style.display = 'block';
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').style.display = 'none';
+    }
+    window.addEventListener('click', function(e) {
+      const sidebar = document.getElementById('sidebar');
+      if (sidebar.style.display === 'block' && !sidebar.contains(e.target) && !e.target.classList.contains('menu-btn')) {
+        sidebar.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
