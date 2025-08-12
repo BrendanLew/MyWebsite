@@ -1,117 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Brendan's Portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
+  <meta charset="UTF-8">
+  <title>Brendan's Blog | Cybersecurity Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts: Raleway & Fira Mono for hacker vibe -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="w3-light-grey">
+<body>
+  <!-- Hamburger Menu Button -->
+  <button class="menu-btn" onclick="openSidebar()">☰</button>
 
-<!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()"
-  class="w3-bar-item w3-button">X</a>
-  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
-  <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
-</nav>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">✕</button>
+    <a href="index.html" onclick="closeSidebar()">Home</a>
+    <a href="contact.html" onclick="closeSidebar()">Contact</a>
+  </nav>
 
-<!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-    <div class="w3-center w3-padding-16">Brendan's Blog</div>
+  <!-- Banner -->
+  <div class="banner">
+    <span style="color:#fff;">Brendan's</span> Blog
+    <span style="font-size:1.1rem; color:#0f0; margin-left:0.5rem;">$ cat blog.txt</span>
   </div>
-</div>
-  
-<!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-  <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    <div class="w3-quarter">
-      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-  </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
-      <h3>All I Need Is a Popsicle</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+  <!-- Blog Feed -->
+  <div class="container" id="blog-feed">
+    <!-- Blog Post Example -->
+    <article class="blog-post" data-title="How I Got Started in Cybersecurity" data-date="August 12, 2025" data-tag="#journey" data-content="My journey into cybersecurity began with curiosity and a desire to understand how systems work—and how they break. From tinkering with Linux to exploring CTFs, every step has been a learning experience. In this post, I share the resources, communities, and mindsets that helped me get started. <br><br><strong>Key Takeaways:</strong><ul><li>Start with curiosity and a willingness to learn.</li><li>Participate in CTFs and online communities.</li><li>Never stop exploring new tools and techniques.</li></ul>">
+      <h2 class="blog-title">How I Got Started in Cybersecurity</h2>
+      <div class="blog-meta">
+        <span class="blog-date">August 12, 2025</span>
+        <span class="blog-tag">#journey</span>
+      </div>
+      <p>
+        My journey into cybersecurity began with curiosity and a desire to understand how systems work—and how they break. From tinkering with Linux to exploring CTFs, every step has been a learning experience. In this post, I share the resources, communities, and mindsets that helped me get started.
+      </p>
+      <a class="blog-readmore" href="#" onclick="openPost(this);return false;">Read more →</a>
+    </article>
+
+    <article class="blog-post" data-title="Top 5 Tools Every Ethical Hacker Should Know" data-date="August 1, 2025" data-tag="#tools" data-content="From Nmap to Burp Suite, these are the essential tools I use in my daily workflow. Learn what they do, why they matter, and how to get started with each.<br><br><strong>My Top 5:</strong><ol><li>Nmap</li><li>Burp Suite</li><li>Metasploit</li><li>Wireshark</li><li>John the Ripper</li></ol>">
+      <h2 class="blog-title">Top 5 Tools Every Ethical Hacker Should Know</h2>
+      <div class="blog-meta">
+        <span class="blog-date">August 1, 2025</span>
+        <span class="blog-tag">#tools</span>
+      </div>
+      <p>
+        From Nmap to Burp Suite, these are the essential tools I use in my daily workflow. Learn what they do, why they matter, and how to get started with each.
+      </p>
+      <a class="blog-readmore" href="#" onclick="openPost(this);return false;">Read more →</a>
+    </article>
+
+    <!-- To add a new post, copy and paste the <article class="blog-post">...</article> block above and update the content. -->
+
+    <!-- Pagination (optional) -->
+    <div class="blog-pagination">
+      <a href="#" class="blog-page blog-page-disabled">«</a>
+      <a href="#" class="blog-page blog-page-active">1</a>
+      <a href="#" class="blog-page">2</a>
+      <a href="#" class="blog-page">3</a>
+      <a href="#" class="blog-page">»</a>
     </div>
   </div>
 
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+  <!-- Blog Post Overlay -->
+  <div id="blog-overlay" class="blog-overlay" style="display:none;">
+    <div class="blog-overlay-content">
+      <button class="blog-overlay-close" onclick="closePost()">✕</button>
+      <h2 id="overlay-title"></h2>
+      <div class="blog-meta">
+        <span id="overlay-date" class="blog-date"></span>
+        <span id="overlay-tag" class="blog-tag"></span>
+      </div>
+      <div id="overlay-content" class="blog-overlay-body"></div>
     </div>
   </div>
 
-<!-- End page content -->
-</div>
+  <!-- Footer -->
+  <footer>
+    <a href="index.html">Previous</a>
+    <a href="contact.html">Next »</a>
+    <div style="margin-top:1rem;">© 2025 Brendan Lewis - All Rights Reserved.</div>
+  </footer>
 
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <a href="index.html" class="w3-button w3-dark-grey w3-padding-large w3-margin-bottom">Previous</a>
-  <a href="contact.html" class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</a>
-  <p> © 2025 Brendan Lewis - All Rights Reserved.</p>
-</footer>
+  <script>
+    // Sidebar open/close
+    function openSidebar() {
+      document.getElementById('sidebar').style.display = 'block';
+    }
+    function closeSidebar() {
+      document.getElementById('sidebar').style.display = 'none';
+    }
+    window.addEventListener('click', function(e) {
+      const sidebar = document.getElementById('sidebar');
+      if (sidebar.style.display === 'block' && !sidebar.contains(e.target) && !e.target.classList.contains('menu-btn')) {
+        sidebar.style.display = 'none';
+      }
+    });
 
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
-
+    // Blog overlay logic
+    function openPost(link) {
+      const post = link.closest('.blog-post');
+      document.getElementById('overlay-title').textContent = post.getAttribute('data-title');
+      document.getElementById('overlay-date').textContent = post.getAttribute('data-date');
+      document.getElementById('overlay-tag').textContent = post.getAttribute('data-tag');
+      document.getElementById('overlay-content').innerHTML = post.getAttribute('data-content');
+      document.getElementById('blog-overlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closePost() {
+      document.getElementById('blog-overlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    // Close overlay on ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closePost();
+    });
+    // Close overlay on outside click
+    document.getElementById('blog-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closePost();
+    });
+  </script>
 </body>
 </html>
