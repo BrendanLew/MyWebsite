@@ -4,31 +4,22 @@
   <meta charset="UTF-8">
   <title>Brendan's Blog | Cybersecurity Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts: Raleway & Fira Mono for hacker vibe -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Hamburger Menu Button -->
   <button class="menu-btn" onclick="openSidebar()">☰</button>
-
-  <!-- Sidebar Navigation -->
   <nav class="sidebar" id="sidebar">
     <button class="close-btn" onclick="closeSidebar()">✕</button>
     <a href="index.html" onclick="closeSidebar()">Home</a>
     <a href="contact.html" onclick="closeSidebar()">Contact</a>
   </nav>
-
-  <!-- Banner -->
   <div class="banner">
     <span style="color:#fff;">Brendan's</span> Blog
-    <span style="font-size:1.1rem; color:#0f0; margin-left:0.5rem;">$ cat blog.txt</span>
+    <span class="banner-terminal">$ cat blog.txt</span>
   </div>
-
-  <!-- Blog Feed -->
-  <div class="container" id="blog-feed">
-    <!-- Blog Post Example -->
+  <main class="container" id="blog-feed">
     <article class="blog-post" data-title="How I Got Started in Cybersecurity" data-date="August 12, 2025" data-tag="#journey" data-content="My journey into cybersecurity began with curiosity and a desire to understand how systems work—and how they break. From tinkering with Linux to exploring CTFs, every step has been a learning experience. In this post, I share the resources, communities, and mindsets that helped me get started. <br><br><strong>Key Takeaways:</strong><ul><li>Start with curiosity and a willingness to learn.</li><li>Participate in CTFs and online communities.</li><li>Never stop exploring new tools and techniques.</li></ul>">
       <h2 class="blog-title">How I Got Started in Cybersecurity</h2>
       <div class="blog-meta">
@@ -40,7 +31,6 @@
       </p>
       <a class="blog-readmore" href="#" onclick="openPost(this);return false;">Read more →</a>
     </article>
-
     <article class="blog-post" data-title="Top 5 Tools Every Ethical Hacker Should Know" data-date="August 1, 2025" data-tag="#tools" data-content="From Nmap to Burp Suite, these are the essential tools I use in my daily workflow. Learn what they do, why they matter, and how to get started with each.<br><br><strong>My Top 5:</strong><ol><li>Nmap</li><li>Burp Suite</li><li>Metasploit</li><li>Wireshark</li><li>John the Ripper</li></ol>">
       <h2 class="blog-title">Top 5 Tools Every Ethical Hacker Should Know</h2>
       <div class="blog-meta">
@@ -52,10 +42,7 @@
       </p>
       <a class="blog-readmore" href="#" onclick="openPost(this);return false;">Read more →</a>
     </article>
-
     <!-- To add a new post, copy and paste the <article class="blog-post">...</article> block above and update the content. -->
-
-    <!-- Pagination (optional) -->
     <div class="blog-pagination">
       <a href="#" class="blog-page blog-page-disabled">«</a>
       <a href="#" class="blog-page blog-page-active">1</a>
@@ -63,9 +50,7 @@
       <a href="#" class="blog-page">3</a>
       <a href="#" class="blog-page">»</a>
     </div>
-  </div>
-
-  <!-- Blog Post Overlay -->
+  </main>
   <div id="blog-overlay" class="blog-overlay" style="display:none;">
     <div class="blog-overlay-content">
       <button class="blog-overlay-close" onclick="closePost()">✕</button>
@@ -77,16 +62,12 @@
       <div id="overlay-content" class="blog-overlay-body"></div>
     </div>
   </div>
-
-  <!-- Footer -->
   <footer>
     <a href="index.html">Previous</a>
     <a href="contact.html">Next »</a>
-    <div style="margin-top:1rem;">© 2025 Brendan Lewis - All Rights Reserved.</div>
+    <div>© 2025 Brendan Lewis - All Rights Reserved.</div>
   </footer>
-
   <script>
-    // Sidebar open/close
     function openSidebar() {
       document.getElementById('sidebar').style.display = 'block';
     }
@@ -99,8 +80,6 @@
         sidebar.style.display = 'none';
       }
     });
-
-    // Blog overlay logic
     function openPost(link) {
       const post = link.closest('.blog-post');
       document.getElementById('overlay-title').textContent = post.getAttribute('data-title');
@@ -114,11 +93,9 @@
       document.getElementById('blog-overlay').style.display = 'none';
       document.body.style.overflow = '';
     }
-    // Close overlay on ESC
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") closePost();
     });
-    // Close overlay on outside click
     document.getElementById('blog-overlay').addEventListener('click', function(e) {
       if (e.target === this) closePost();
     });

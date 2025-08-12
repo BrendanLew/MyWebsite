@@ -1,17 +1,4 @@
-/* Reset and base styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-/* Color Variables */
+/* Base and variables */
 :root {
   --primary: #222831;
   --secondary: #393e46;
@@ -22,7 +9,8 @@ body {
   --radius: 1.5rem;
 }
 
-/* Global Styles */
+* { box-sizing: border-box; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -30,37 +18,6 @@ html, body {
   color: var(--text);
   font-family: 'Raleway', sans-serif;
   min-height: 100vh;
-}
-
-/* Top Navigation */
-.top-nav {
-  background-color: #0d1117;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  color: white;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: #c9d1d9;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #58a6ff;
 }
 
 /* Banner */
@@ -77,8 +34,13 @@ html, body {
   margin-bottom: 2rem;
   user-select: none;
 }
+.banner-terminal {
+  font-size: 1.1rem;
+  color: #0f0;
+  margin-left: 0.5rem;
+}
 
-/* Menu Button */
+/* Hamburger Menu */
 .menu-btn {
   position: fixed;
   top: 1.2rem;
@@ -95,18 +57,9 @@ html, body {
   box-shadow: var(--shadow);
   transition: background 0.2s;
 }
-
 .menu-btn:hover {
   background: var(--accent);
   color: var(--primary);
-}
-
-/* Layout */
-.container {
-  display: flex;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 1rem 2rem 1rem;
 }
 
 /* Sidebar */
@@ -123,21 +76,10 @@ html, body {
   border-radius: 0 var(--radius) var(--radius) 0;
   animation: slideIn 0.2s;
 }
-
 @keyframes slideIn {
   from { left: -320px; }
   to { left: 0; }
 }
-
-.sidebar h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.2rem;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
 .sidebar a {
   display: block;
   color: var(--accent);
@@ -149,12 +91,10 @@ html, body {
   margin: 0.5rem 1rem;
   transition: background 0.15s, color 0.15s;
 }
-
 .sidebar a:hover {
   background: var(--accent);
   color: var(--primary);
 }
-
 .sidebar .close-btn {
   font-size: 1.5rem;
   color: #fff;
@@ -166,59 +106,88 @@ html, body {
 }
 
 /* Main Content */
-.main-content {
-  flex: 1;
-  padding: 2rem;
-}
-
-.hero {
-  margin-bottom: 3rem;
-  background-color: #e9ecef;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.hero h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  color: #555;
-}
-
-/* Blog Posts */
-.blog-posts {
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-
-.post {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s;
+.bubble {
+  background: var(--bubble);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  text-align: center;
 }
-
-.post:hover {
-  transform: translateY(-2px);
+.bubble img {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid var(--accent);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-
-.post h2 {
-  font-size: 1.4rem;
-  color: #212529;
-  margin-bottom: 0.5rem;
+.bubble h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1.6rem;
+  color: var(--primary);
 }
-
-.post p {
-  line-height: 1.6;
+.bubble h4 {
+  font-family: 'Fira Mono', monospace;
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem 0;
+}
+.bubble p {
   color: #444;
+  font-size: 1.08rem;
+  margin: 0.5rem 0 0 0;
+}
+.hacker-tag {
+  color: var(--accent);
+  font-family: 'Fira Mono', monospace;
 }
 
-/* Blog Post Feed Styles */
+/* Links */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 0.5rem 0;
+}
+.links a {
+  background: var(--secondary);
+  color: var(--accent);
+  font-family: 'Fira Mono', monospace;
+  padding: 0.9rem 1.6rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+  transition: background 0.15s, color 0.15s;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
+.links a:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+.links .download {
+  background: #0f0;
+  color: var(--primary);
+  font-weight: bold;
+}
+.links .download:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+/* Blog Post Feed */
 .blog-post {
   background: var(--bubble);
   border-radius: var(--radius);
@@ -310,7 +279,7 @@ html, body {
   pointer-events: none;
 }
 
-/* Blog Overlay Styles */
+/* Blog Overlay */
 .blog-overlay {
   display: none;
   position: fixed;
@@ -363,6 +332,47 @@ html, body {
   margin-top: 1.5rem;
   line-height: 1.7;
 }
+
+/* Footer */
+footer {
+  background: var(--secondary);
+  color: #bbb;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  font-size: 1rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+}
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-family: 'Fira Mono', monospace;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1.2rem;
+  transition: background 0.15s, color 0.15s;
+}
+footer a:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+footer .disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 0.5rem 2rem 0.5rem;
+  }
+  .bubble {
+    padding: 1.5rem 1rem;
+  }
+}
 @media (max-width: 700px) {
   .blog-overlay-content {
     max-width: 98vw;
@@ -370,13 +380,72 @@ html, body {
   }
 }
 @media (max-width: 600px) {
-  .container { padding: 0 0.2rem; }
-  .bubble { padding: 1.2rem; }
-  .banner { font-size: 1.3rem; padding: 1.5rem 0.5rem 1rem 0.5rem; }
-  .sidebar { width: 90vw; min-width: unset; }
+  html, body {
+    font-size: 16px;
+  }
+  .banner {
+    font-size: 1.1rem;
+    padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .menu-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    top: 0.7rem;
+    left: 0.7rem;
+  }
+  .sidebar {
+    width: 90vw;
+    min-width: unset;
+    padding-top: 1rem;
+    border-radius: 0 1rem 1rem 0;
+  }
+  .sidebar a {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    margin: 0.3rem 0.5rem;
+  }
+  .bubble {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .bubble img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0.7rem;
+  }
+  .bubble h3 {
+    font-size: 1.15rem;
+  }
+  .bubble h4 {
+    font-size: 0.95rem;
+    margin: 0.7rem 0 0.3rem 0;
+  }
+  .bubble p {
+    font-size: 0.98rem;
+  }
+  .links {
+    gap: 0.5rem;
+    margin: 1rem 0 0.3rem 0;
+  }
+  .links a {
+    padding: 0.7rem 1rem;
+    font-size: 0.98rem;
+  }
   .blog-post { padding: 1.2rem 0.7rem 1rem 0.7rem; }
   .blog-title { font-size: 1.25rem; }
   .blog-overlay-content { padding: 1.2rem 0.7rem 1.2rem 0.7rem; }
+  footer {
+    font-size: 0.95rem;
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+    border-radius: 1rem 1rem 0 0;
+    margin-top: 1.2rem;
+  }
+  footer a {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.5rem;
+  }
 }
-
-/* ...existing code... */
