@@ -20,36 +20,7 @@
     <span class="banner-terminal">$ cat blog.txt</span>
   </div>
   <main class="container" id="blog-feed">
-    <article class="blog-post" data-title="How I Got Started in Cybersecurity" data-date="August 12, 2025" data-tag="#journey" data-content="My journey into cybersecurity began with curiosity and a desire to understand how systems work—and how they break. From tinkering with Linux to exploring CTFs, every step has been a learning experience. In this post, I share the resources, communities, and mindsets that helped me get started. <br><br><strong>Key Takeaways:</strong><ul><li>Start with curiosity and a willingness to learn.</li><li>Participate in CTFs and online communities.</li><li>Never stop exploring new tools and techniques.</li></ul>">
-      <h2 class="blog-title">How I Got Started in Cybersecurity</h2>
-      <div class="blog-meta">
-        <span class="blog-date">August 12, 2025</span>
-        <span class="blog-tag">#journey</span>
-      </div>
-      <p>
-        My journey into cybersecurity began with curiosity and a desire to understand how systems work—and how they break. From tinkering with Linux to exploring CTFs, every step has been a learning experience. In this post, I share the resources, communities, and mindsets that helped me get started.
-      </p>
-      <a class="blog-readmore" href="#" onclick="openPost(this);return false;">Read more →</a>
-    </article>
-    <article class="blog-post" data-title="Top 5 Tools Every Ethical Hacker Should Know" data-date="August 1, 2025" data-tag="#tools" data-content="From Nmap to Burp Suite, these are the essential tools I use in my daily workflow. Learn what they do, why they matter, and how to get started with each.<br><br><strong>My Top 5:</strong><ol><li>Nmap</li><li>Burp Suite</li><li>Metasploit</li><li>Wireshark</li><li>John the Ripper</li></ol>">
-      <h2 class="blog-title">Top 5 Tools Every Ethical Hacker Should Know</h2>
-      <div class="blog-meta">
-        <span class="blog-date">August 1, 2025</span>
-        <span class="blog-tag">#tools</span>
-      </div>
-      <p>
-        From Nmap to Burp Suite, these are the essential tools I use in my daily workflow. Learn what they do, why they matter, and how to get started with each.
-      </p>
-      <a class="blog-readmore" href="#" onclick="openPost(this);return false;">Read more →</a>
-    </article>
-    <!-- To add a new post, copy and paste the <article class="blog-post">...</article> block above and update the content. -->
-    <div class="blog-pagination">
-      <a href="#" class="blog-page blog-page-disabled">«</a>
-      <a href="#" class="blog-page blog-page-active">1</a>
-      <a href="#" class="blog-page">2</a>
-      <a href="#" class="blog-page">3</a>
-      <a href="#" class="blog-page">»</a>
-    </div>
+    <!-- Blog posts will be rendered here by JS -->
   </main>
   <div id="blog-overlay" class="blog-overlay" style="display:none;">
     <div class="blog-overlay-content">
@@ -68,6 +39,7 @@
     <div>© 2025 Brendan Lewis - All Rights Reserved.</div>
   </footer>
   <script>
+    // Sidebar logic
     function openSidebar() {
       document.getElementById('sidebar').style.display = 'block';
     }
@@ -80,18 +52,111 @@
         sidebar.style.display = 'none';
       }
     });
-    function openPost(link) {
-      const post = link.closest('.blog-post');
-      document.getElementById('overlay-title').textContent = post.getAttribute('data-title');
-      document.getElementById('overlay-date').textContent = post.getAttribute('data-date');
-      document.getElementById('overlay-tag').textContent = post.getAttribute('data-tag');
-      document.getElementById('overlay-content').innerHTML = post.getAttribute('data-content');
+
+    // Blog posts data
+    const blogPosts = [
+      {
+        title: "How I Got Started in Cybersecurity",
+        date: "August 12, 2025",
+        tag: "#journey",
+        preview: "My journey into cybersecurity began with curiosity and a desire to understand how systems work—and how they break. From tinkering with Linux to exploring CTFs, every step has been a learning experience. In this post, I share the resources, communities, and mindsets that helped me get started.",
+        content: `My journey into cybersecurity began with curiosity and a desire to understand how systems work—and how they break. From tinkering with Linux to exploring CTFs, every step has been a learning experience. In this post, I share the resources, communities, and mindsets that helped me get started.
+        <br><br><strong>Key Takeaways:</strong>
+        <ul>
+          <li>Start with curiosity and a willingness to learn.</li>
+          <li>Participate in CTFs and online communities.</li>
+          <li>Never stop exploring new tools and techniques.</li>
+        </ul>`
+      },
+      {
+        title: "Top 5 Tools Every Ethical Hacker Should Know",
+        date: "August 1, 2025",
+        tag: "#tools",
+        preview: "From Nmap to Burp Suite, these are the essential tools I use in my daily workflow. Learn what they do, why they matter, and how to get started with each.",
+        content: `From Nmap to Burp Suite, these are the essential tools I use in my daily workflow. Learn what they do, why they matter, and how to get started with each.
+        <br><br><strong>My Top 5:</strong>
+        <ol>
+          <li>Nmap</li>
+          <li>Burp Suite</li>
+          <li>Metasploit</li>
+          <li>Wireshark</li>
+          <li>John the Ripper</li>
+        </ol>`
+      },
+      {
+        title: "Why Cyber Hygiene Matters",
+        date: "July 20, 2025",
+        tag: "#basics",
+        preview: "Good cyber hygiene is the foundation of security. In this post, I discuss simple habits that can prevent most attacks and keep your data safe.",
+        content: `Good cyber hygiene is the foundation of security. In this post, I discuss simple habits that can prevent most attacks and keep your data safe.
+        <br><br><ul>
+          <li>Use strong, unique passwords.</li>
+          <li>Keep your software updated.</li>
+          <li>Be wary of phishing attempts.</li>
+        </ul>`
+      },
+      // Add more posts here as needed
+    ];
+
+    // Pagination logic
+    const postsPerPage = 3;
+    let currentPage = 1;
+
+    function renderPosts(page) {
+      const feed = document.getElementById('blog-feed');
+      feed.innerHTML = '';
+      const start = (page - 1) * postsPerPage;
+      const end = start + postsPerPage;
+      const postsToShow = blogPosts.slice(start, end);
+
+      postsToShow.forEach(post => {
+        const article = document.createElement('article');
+        article.className = 'blog-post';
+        article.innerHTML = `
+          <h2 class="blog-title">${post.title}</h2>
+          <div class="blog-meta">
+            <span class="blog-date">${post.date}</span>
+            <span class="blog-tag">${post.tag}</span>
+          </div>
+          <p>${post.preview}</p>
+          <a class="blog-readmore" href="#" onclick="openPostFromList('${post.title.replace(/'/g,"\\'")}');return false;">Read more →</a>
+        `;
+        feed.appendChild(article);
+      });
+
+      // Pagination controls
+      const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+      let pagination = `<div class="blog-pagination">`;
+      pagination += `<a href="#" class="blog-page${page === 1 ? ' blog-page-disabled' : ''}" onclick="gotoPage(${page-1});return false;">«</a>`;
+      for (let i = 1; i <= totalPages; i++) {
+        pagination += `<a href="#" class="blog-page${i === page ? ' blog-page-active' : ''}" onclick="gotoPage(${i});return false;">${i}</a>`;
+      }
+      pagination += `<a href="#" class="blog-page${page === totalPages ? ' blog-page-disabled' : ''}" onclick="gotoPage(${page+1});return false;">»</a>`;
+      pagination += `</div>`;
+      feed.innerHTML += pagination;
+    }
+
+    function gotoPage(page) {
+      const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+      renderPosts(currentPage);
+    }
+
+    // Overlay logic
+    function openPostFromList(title) {
+      const post = blogPosts.find(p => p.title === title);
+      if (!post) return;
+      document.getElementById('overlay-title').textContent = post.title;
+      document.getElementById('overlay-date').textContent = post.date;
+      document.getElementById('overlay-tag').textContent = post.tag;
+      document.getElementById('overlay-content').innerHTML = post.content;
       document.getElementById('blog-overlay').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('no-scroll');
     }
     function closePost() {
       document.getElementById('blog-overlay').style.display = 'none';
-      document.body.style.overflow = '';
+      document.body.classList.remove('no-scroll');
     }
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") closePost();
@@ -99,6 +164,13 @@
     document.getElementById('blog-overlay').addEventListener('click', function(e) {
       if (e.target === this) closePost();
     });
+
+    // Expose for inline onclick
+    window.gotoPage = gotoPage;
+    window.openPostFromList = openPostFromList;
+
+    // Initial render
+    renderPosts(currentPage);
   </script>
 </body>
 </html>

@@ -280,6 +280,9 @@ html, body {
 }
 
 /* Blog Overlay */
+.no-scroll {
+  overflow: hidden;
+}
 .blog-overlay {
   display: none;
   position: fixed;
@@ -302,6 +305,8 @@ html, body {
   padding: 2.5rem 2rem 2rem 2rem;
   position: relative;
   animation: fadeIn 0.2s;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(40px);}
